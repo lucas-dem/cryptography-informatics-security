@@ -2,17 +2,14 @@ import smtplib
 from email.mime.text import MIMEText
 import openpyxl
 
-# Configuración del servidor SMTP
 servidor_smtp = "smtp.gmail.com"
 puerto_smtp = 587
-remitente = "tu_correo@gmail.com"
+remitente = "lukijianragnarok@gmail.com"
 contraseña = "tu_contraseña"
 
-# Carga el archivo XLSX
 archivo_excel = openpyxl.load_workbook("direcciones_correo.xlsx")
 hoja_activa = archivo_excel.active
 
-# Itera sobre las filas del archivo XLSX
 for fila in range(2, hoja_activa.max_row + 1):
     destinatario = hoja_activa.cell(row=fila, column=1).value
 
@@ -29,13 +26,11 @@ for fila in range(2, hoja_activa.max_row + 1):
     </html>
     """
 
-    # Crea el objeto mensaje
     mensaje = MIMEText(contenido_html, "html")
     mensaje["From"] = remitente
     mensaje["To"] = destinatario
     mensaje["Subject"] = "Bienvenida"
 
-    # Envía el mensaje
     with smtplib.SMTP(servidor_smtp, puerto_smtp) as servidor:
         servidor.starttls()
         servidor.login(remitente, contraseña)
