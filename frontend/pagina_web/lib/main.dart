@@ -16,7 +16,7 @@ class FakeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Home page',
+      title: 'TecnoSolutions',
       initialRoute: Flurorouter.homeroute,
       navigatorKey: NavigationService.navigatorKey,
       onGenerateRoute: Flurorouter.router.generator,
