@@ -89,21 +89,22 @@ class _HomeViewState extends State<HomeView> {
                           backgroundColor: Colors.white,
                           onPressed: () {
                             var dialog = const AlertDialog(
-                              insetPadding: EdgeInsets.symmetric(horizontal: 200, vertical: 200),
+                              insetPadding: EdgeInsets.symmetric(horizontal: 200, vertical: 150),
                               title: Row(
                                 children: [
                                   Icon(Icons.warning_outlined, color: Colors.red, size: 70),
-                                  SizedBox(width: 20),
-                                  Center(child: Text('ATAQUE FALSO!', style: TextStyle(fontSize: 70, color: Colors.black, fontWeight: FontWeight.bold),),),
-                                  SizedBox(width: 20),
-                                  CloseButton()
+                                  Spacer(),
+                                  Center(child: Text('ALERTA!', style: TextStyle(fontSize: 70, color: Colors.black, fontWeight: FontWeight.bold),),),
+                                  Spacer(),
+                                  CloseButton(),
+                                  SizedBox(width: 10),
                                 ],
                               ),
                               content: Column(
                                 children: [
                                   Padding(
                                     padding: EdgeInsets.only(left: 10, right: 10),
-                                    child: Text('Esto fue un ejercicio de concientización \nsobre ataques de phishing. Ninguna información \nreal fue comprometida.', style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w600), textAlign: TextAlign.center),
+                                    child: Text('Esto fue un ejercicio de concientización \nsobre ataques de phishing. Debe tener cuidado de acceder a \nlinks sospechosos y de dar su información en páginas que \nno confía. Ninguna información \nreal fue comprometida.', style: TextStyle(fontSize: 20, color: Colors.black, fontWeight: FontWeight.w600), textAlign: TextAlign.center),
                                   ),
                                   SizedBox(height: 30),
                                   Padding(
